@@ -1,0 +1,326 @@
+.reader {
+  --reader-canvas: #141414;
+  --reader-panel: #1d1d1d;
+  --reader-raised: #2c2b29;
+  --reader-line: #45433f;
+  --reader-ink: #f3f1ed;
+  --reader-muted: #b5b1aa;
+  --reader-accent: #e6ba75;
+  color-scheme: dark;
+  position: fixed;
+  inset: 0;
+  background: var(--reader-background, var(--reader-canvas));
+  color: var(--reader-ink);
+  overflow: hidden;
+  font-family: inherit;
+}
+.stage {
+  position: absolute;
+  inset: 0;
+}
+.pager {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.pagerFrame {
+  min-height: 100%;
+  min-width: 100%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pager img {
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+.pagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  color: var(--reader-muted);
+  font-size: 13px;
+}
+.pagePlaceholder p {
+  overflow-wrap: anywhere;
+  max-width: 600px;
+}
+.reader button,
+.reader select {
+  font: inherit;
+  cursor: pointer;
+}
+.reader button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--reader-line);
+  border-radius: 5px;
+  background: var(--reader-panel);
+  color: var(--reader-ink);
+  padding: 9px 12px;
+  font-size: 12px;
+}
+.reader button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.reader button:hover:not(:disabled) {
+  background: var(--reader-raised);
+}
+.top {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--reader-panel);
+  border-bottom: 1px solid var(--reader-line);
+  padding: 0 23px;
+  z-index: 3;
+}
+.top > a {
+  color: var(--reader-ink);
+  padding: 9px;
+}
+.top > div {
+  flex: 1;
+  min-width: 0;
+}
+.top strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 550;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.top small {
+  display: block;
+  color: var(--reader-muted);
+  font-size: 10px;
+  margin-top: 5px;
+}
+.top button {
+  background: none;
+  border: 0;
+  padding: 10px;
+}
+.bottom {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  background: var(--reader-panel);
+  border-top: 1px solid var(--reader-line);
+  padding: 9px 20px;
+}
+.chapterControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.chapterControls button {
+  border: 0;
+  background: none;
+  padding: 5px;
+}
+.chapterControls span {
+  font-variant-numeric: tabular-nums;
+  color: var(--reader-ink);
+}
+.scrubber {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 9px;
+}
+.scrubber input {
+  flex: 1;
+  accent-color: var(--reader-accent);
+}
+.scrubber button {
+  border: 0;
+  padding: 4px;
+  background: none;
+}
+.settings {
+  position: absolute;
+  top: 67px;
+  right: 18px;
+  width: 292px;
+  padding: 20px;
+  background: var(--reader-panel);
+  border: 1px solid var(--reader-line);
+  border-radius: 8px;
+  z-index: 6;
+}
+.settings > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.settings h2 {
+  font-size: 15px;
+  margin: 0;
+}
+.settings > div button {
+  border: 0;
+  padding: 5px;
+}
+.settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--reader-muted);
+  margin-bottom: 17px;
+}
+.settings select {
+  background: var(--reader-canvas);
+  color: var(--reader-ink);
+  border: 1px solid var(--reader-line);
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+}
+.settings > button {
+  width: 100%;
+}
+.settings small {
+  display: block;
+  line-height: 1.9;
+  color: var(--reader-muted);
+  font-size: 10px;
+  margin-top: 17px;
+}
+.context {
+  position: absolute;
+  z-index: 8;
+  min-width: 195px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--reader-line);
+  background: var(--reader-panel);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.context button {
+  justify-content: flex-start;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 11px 15px;
+}
+.notice {
+  position: absolute;
+  z-index: 9;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  background: var(--reader-raised);
+  color: var(--reader-ink);
+  border: 1px solid var(--reader-line);
+  border-radius: 6px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+}
+.notice button {
+  border: 0;
+  background: none;
+  padding: 2px;
+}
+.failure {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 40px;
+  color: var(--reader-muted);
+  font-size: 13px;
+}
+.failure h1 {
+  font-size: 26px;
+  color: var(--reader-ink);
+}
+.failure a {
+  color: var(--reader-accent);
+}
+.failure p {
+  max-width: 700px;
+  overflow-wrap: anywhere;
+}
+.webtoon {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--reader-background, var(--reader-canvas));
+}
+.webtoonPage {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--reader-panel);
+}
+.webtoonPage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+.webtoonPage > .pagePlaceholder {
+  min-height: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reader * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.reader h2 {
+  color: var(--reader-ink);
+}
+.reader :focus-visible {
+  outline-color: var(--reader-accent);
+}
+.settings {
+  max-height: calc(100vh - 84px);
+  overflow: auto;
+}
+
+.pageNumber {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  color: var(--reader-ink);
+  background: var(--reader-panel);
+  border: 1px solid var(--reader-line);
+  border-radius: 4px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  z-index: 2;
+}

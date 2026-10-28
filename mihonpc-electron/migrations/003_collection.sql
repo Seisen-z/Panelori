@@ -1,0 +1,9 @@
+CREATE TABLE chapter_updates (
+ chapter_id INTEGER PRIMARY KEY REFERENCES chapters(id) ON DELETE CASCADE,
+ discovered INTEGER NOT NULL, seen INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE cached_chapters (
+ chapter_id INTEGER PRIMARY KEY REFERENCES chapters(id) ON DELETE CASCADE,
+ completed INTEGER NOT NULL
+);
+CREATE TABLE settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);

@@ -1,0 +1,4 @@
+Suwayomi-Server v2.4.2366 (MPL-2.0)
+https://github.com/Suwayomi/Suwayomi-Server/tree/v2.4.2366
+Official windows-x64.zip SHA256 b955f374a8d94b8d1c2750ae28fa7eb2066b479957561b5ba9cf8ac993c8fc13
+Only bundled JRE and bin/Suwayomi-Server.jar retained. Original JVM legal notices remain in jre/legal.

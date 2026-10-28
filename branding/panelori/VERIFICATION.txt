@@ -1,0 +1,10 @@
+PANELORI ? VECTOR BRAND PROPOSAL
+8 production SVGs: XML parsed; paths only; no raster images, script, external references or required fonts.
+Presentation is vector SVG with editable caption text; wordmark is outlined Bahnschrift, symbol custom geometry.
+Render command: electron.exe E:/MihonPC/branding/panelori/render.cjs (ELECTRON_RUN_AS_NODE unset).
+Literal output: VECTOR_RENDER_OK: presentation1440x960; app icon1024x1024; isolated Chromium; app branding untouched
+Exit: 0. Presentation visually inspected at1440x960, including24/32/48/64px symbols and monochrome applications.
+App PNG:1024x1024 RGBA; transparent outer corners; Windows ICO verified with7 embedded sizes16/24/32/48/64/128/256.
+PNG exports16/24/32/48/64/128/256/512/1024px use high-quality Lanczos downsampling.
+Current v1.2.2 executable SHA256 unchanged from cleanup verification. No production app files, settings or personal data changed.
+Name Panelori is a creative proposal; no domain/registration/exclusivity claim.

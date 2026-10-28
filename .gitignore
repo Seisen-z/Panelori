@@ -1,0 +1,34 @@
+# Private profiles, accounts, downloads and backups
+MihonPC-data/
+**/MihonPC-data/
+*.db
+*.db-*
+*.sqlite*
+*.tachibk
+*.mihonbk
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+/artifacts/
+
+# Dependencies, generated output and native runtime distributions
+**/node_modules/
+**/out/
+**/dist/
+**/.smoke/
+**/.test-out/
+/mihonpc-electron/runtime/bin/
+/mihonpc-electron/runtime/jre/
+*.zip
+*.exe
+*.msi
+*.blockmap
+*.tsbuildinfo
+.eslintcache
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+/branding/**/render-profile/

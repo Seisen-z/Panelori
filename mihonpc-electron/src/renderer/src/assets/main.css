@@ -1,0 +1,197 @@
+/* Reading desk: covers carry color; the frame stays quiet. */
+:root {
+  font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+  --page: #f6f4f0;
+  --paper: #fffefb;
+  --raised: #eeebe5;
+  --ink: #25231f;
+  --muted: #69655f;
+  --accent: #8a5925;
+  --accent-ink: #fffefb;
+  --accent-soft: #efe4d3;
+  --line: #d9d5cd;
+  --success: #39704e;
+  --danger: #a12e34;
+  --danger-soft: #fbe9e9;
+  --display: 'Bahnschrift', 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #141414;
+  --paper: #1d1d1d;
+  --raised: #252525;
+  --ink: #f3f1ed;
+  --muted: #a6a4a0;
+  --accent: #e6ba75;
+  --accent-ink: #261e13;
+  --accent-soft: #342b20;
+  --line: #383735;
+  --success: #a0c3a6;
+  --danger: #f0a1a4;
+  --danger-soft: #362224;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 360px;
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+h1,
+h2,
+h3 {
+  color: var(--ink);
+}
+h1 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+button:hover:not(:disabled) {
+  background: var(--raised);
+  border-color: var(--muted);
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+input:not([type='checkbox']):not([type='range']):not([type='color']),
+select,
+textarea {
+  min-height: 34px;
+  padding: 7px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-width: 0;
+  max-width: 100%;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  vertical-align: middle;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+input[type='range'],
+progress {
+  accent-color: var(--accent);
+}
+label {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent);
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+button[aria-pressed='true'],
+button[aria-selected='true'] {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 8px 0;
+}
+details[open] > summary {
+  color: var(--ink);
+}
+code {
+  font-family: Consolas, monospace;
+}
+progress {
+  width: 100%;
+  height: 6px;
+}
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
